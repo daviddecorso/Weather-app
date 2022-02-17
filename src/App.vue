@@ -6,6 +6,7 @@
     <div class="container">
       <Weather :msg="weatherType" /> <Umbrella :msg="umbrellaText" />
     </div>
+    <h1>{{}}</h1>
   </div>
 </template>
 
@@ -41,7 +42,7 @@ export default {
     async getWeatherType() {
       axios
         .post("http://localhost:5000/getWeatherFromDate", {
-          date: "2/16/22",
+          date: "2/17/22",
         })
         .then((res) => {
           this.weatherType = res.data;
